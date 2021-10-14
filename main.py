@@ -48,7 +48,7 @@ async def get_a_book(book_id:int):
 
 
 @app.put('/book/{book_id}',response_model=Book)
-async def get_all_books(book_id:int,book:Book):
+async def update_a_book(book_id:int,book:Book):
     statement=select(Book).where(Book.id==book_id)
 
     result=session.exec(statement).first()
